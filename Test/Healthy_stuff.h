@@ -3,7 +3,6 @@
 #include <iostream>
 #include <string>
 
-static int choice;
 
 struct client
 {
@@ -12,8 +11,10 @@ struct client
 	std::string email;
 };
 
-void Menu();
+int Menu(int&);
 void Show(client*);
+void ShowClient(client*, int);
+int Find(client*);
 void Add(client*);
 void Erase(client*);
-
+void Sort(client*);

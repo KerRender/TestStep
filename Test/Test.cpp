@@ -6,8 +6,9 @@
 int main()
 {
 	client* phonebook = new client[100];
+	int choice;
 	do {
-		Menu();
+		Menu(choice);
 		switch (choice)
 		{
 		case 1: {
@@ -15,14 +16,28 @@ int main()
 			break;
 		}
 		case 2: {
-			Add(phonebook);
+			std::cout << "Find by:\n";
+			ShowClient(phonebook, Find(phonebook));
 			break;
 		}
 		case 3: {
-
+			Add(phonebook);
+			break;
+		}
+		case 4: {
+			Erase(phonebook);
+			break;
+		}
+		case 5: {
+			Sort(phonebook);
 		}
 		default:
 			break;
 		}
-	} while (choice != );
+	} while (choice != 6);
+
+	delete [] phonebook;
+
+	std::cout << "Farewell!";
+	return 0;
 }
